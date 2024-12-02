@@ -12,6 +12,9 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
+# Add the common library
+add_subdirectory(common)
+
 # Find all subdirectories matching the pattern "day-xx"
 file(GLOB DAY_DIRECTORIES RELATIVE ${CMAKE_SOURCE_DIR} "day-[0-9][0-9]")
 

@@ -1,7 +1,9 @@
 # /// script
 # requires-python = ">=3.12"
 # dependencies = [
+#     "advent-of-code-data",
 #     "jinja2",
+#     "python-dotenv",
 # ]
 # ///
 import os
@@ -9,6 +11,9 @@ import shutil
 import sys
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def create_new_day(day):
     # Define paths
@@ -49,6 +54,13 @@ def create_new_day(day):
 
     print(f'New day created: {new_day_folder}')
 
+
+def downloadDay(day):
+    from aocd import get_data
+    data = get_data(day=day)
+    with open(f'day-{day:02d}/input.txt', 'w') as f:
+        f.write(data)
+
 if __name__ == '__main__':
     if len(sys.argv) != 2:
         print('Usage: python new-day.py <day>')
@@ -56,3 +68,4 @@ if __name__ == '__main__':
 
     day = int(sys.argv[1])
     create_new_day(day)
+    downloadDay(day)
