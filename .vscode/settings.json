@@ -1,6 +1,10 @@
 {
-    "cmake.sourceDirectory": "/workspaces/AoC-Cpp-Template",
+    "cmake.sourceDirectory": "${workspaceFolder}",
     "cmake.ignoreCMakeListsMissing": true,
+    "C_Cpp.default.cppStandard": "c++23",
+    "C_Cpp.default.compilerPath": "/usr/bin/g++",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
     "files.associations": {
         "iostream": "cpp",
         "fstream": "cpp",

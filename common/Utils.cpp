@@ -1,0 +1,1 @@
+// Intentionally empty: legacy implementations moved to header-only helpers.
